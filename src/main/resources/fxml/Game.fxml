@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../styles/Styles.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <MenuBar fx:id="menuBar" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="25.0">
+            <menus>
+                <Menu mnemonicParsing="false" text="%menu.game">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#wizardAction" text="%menu.game.wizard" />
+                        <MenuItem mnemonicParsing="false" onAction="#closeAction" text="%menu.game.close" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="%menu.settings">
+                    <items>
+                        <Menu mnemonicParsing="false" text="%menu.settings.locale">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#setLocaleEnAction" text="%menu.settings.locale.en" />
+                                <MenuItem mnemonicParsing="false" onAction="#setLocaleRuAction" text="%menu.settings.locale.ru" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="%menu.settings.size">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#setElementSizeSmallAction" text="%menu.settings.size.small" />
+                                <MenuItem mnemonicParsing="false" onAction="#setElementSizeNormalAction" text="%menu.settings.size.normal" />
+                                <MenuItem mnemonicParsing="false" onAction="#setElementSizeLargeAction" text="%menu.settings.size.large" />
+                            </items>
+                        </Menu>
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <AnchorPane id="gameArea" fx:id="gameArea" VBox.vgrow="ALWAYS" />
+        <ToolBar fx:id="toolBar" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="25.0">
+            <items>
+                <HBox>
+                    <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="%game.counter.timer">
+                            <HBox.margin>
+                                <Insets right="5.0" />
+                            </HBox.margin>
+                        </Text>
+                        <Text fx:id="timeCounter" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                            <HBox.margin>
+                                <Insets right="15.0" />
+                            </HBox.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="%game.counter.moves">
+                            <HBox.margin>
+                                <Insets right="5.0" />
+                            </HBox.margin>
+                        </Text>
+                        <Text fx:id="movesCounter" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
+                    </children>
+                </HBox>
+            </items>
+        </ToolBar>
+    </children>
+</VBox>
